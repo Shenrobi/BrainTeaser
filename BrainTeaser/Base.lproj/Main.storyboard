@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="BrainTeaser" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,332 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brain" translatesAutoresizingMaskIntoConstraints="NO" id="EJF-Ms-xNf">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="JIO-8X-p3D"/>
+                                    <constraint firstAttribute="width" constant="300" id="YYX-Fs-uaE"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FQ7-iT-1md" customClass="CustomTextField" customModule="BrainTeaser" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WQL-7r-TeW"/>
+                                    <constraint firstAttribute="width" constant="300" id="yQj-zj-URP"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uzz-4M-1bo" customClass="CustomTextField" customModule="BrainTeaser" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="bNK-ny-G50"/>
+                                    <constraint firstAttribute="height" constant="40" id="rNa-KC-Xnb"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-QV-X5T" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.066666666666666666" green="0.5725490196078431" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="JEa-7s-c2O"/>
+                                    <constraint firstAttribute="width" constant="147" id="aLq-KM-Wr3"/>
+                                </constraints>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="z7d-oD-UPK" kind="show" id="kue-RV-YYp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="FQ7-iT-1md" firstAttribute="top" secondItem="EJF-Ms-xNf" secondAttribute="bottom" constant="35" id="BBh-EG-fhb"/>
+                            <constraint firstItem="FQ7-iT-1md" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IWx-wj-hUA"/>
+                            <constraint firstItem="Uzz-4M-1bo" firstAttribute="top" secondItem="FQ7-iT-1md" secondAttribute="bottom" constant="25" id="J0i-Qw-CY5"/>
+                            <constraint firstItem="EJF-Ms-xNf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="JIe-PP-rfD"/>
+                            <constraint firstItem="rbh-QV-X5T" firstAttribute="centerX" secondItem="Uzz-4M-1bo" secondAttribute="centerX" id="RbP-cC-1tJ"/>
+                            <constraint firstItem="rbh-QV-X5T" firstAttribute="top" secondItem="Uzz-4M-1bo" secondAttribute="bottom" constant="25" id="ZXq-hN-dnw"/>
+                            <constraint firstItem="Uzz-4M-1bo" firstAttribute="centerX" secondItem="FQ7-iT-1md" secondAttribute="centerX" id="Zsl-th-Pxx"/>
+                            <constraint firstItem="EJF-Ms-xNf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wLg-0w-Xd2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailConstraint" destination="IWx-wj-hUA" id="IhF-sg-e2f"/>
+                        <outlet property="loginConstraint" destination="RbP-cC-1tJ" id="OzH-JD-kKy"/>
+                        <outlet property="passwordConstraint" destination="Zsl-th-Pxx" id="unw-B3-sYV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+        <!--Game TypeVC-->
+        <scene sceneID="zOp-Jg-hCq">
+            <objects>
+                <viewController id="z7d-oD-UPK" customClass="GameTypeVC" customModule="BrainTeaser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3LR-gL-w1e"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iz6-s7-yg7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e4N-nV-2wx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SzY-Oo-TEx">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="339" id="OnO-V4-YfD"/>
+                                    <constraint firstAttribute="height" constant="25" id="yFb-Me-VuS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q0M-IC-bc0" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="0TG-QZ-SVR"/>
+                                    <constraint firstAttribute="width" constant="156" id="Ito-yb-UKn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <state key="normal" title="NUMBERS">
+                                    <color key="titleColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="gameTypeOneTapped:" destination="z7d-oD-UPK" eventType="touchUpInside" id="OEU-0D-MRY"/>
+                                    <action selector="noPressed:" destination="cTE-0s-Zgl" eventType="touchUpInside" id="SlB-fZ-zj0"/>
+                                    <segue destination="cTE-0s-Zgl" kind="show" id="GVO-MO-GEb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYH-j0-gQG" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
+                                <color key="backgroundColor" red="1" green="0.24128146701388886" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="8XM-oA-DMr"/>
+                                    <constraint firstAttribute="width" constant="156" id="v1x-mp-okw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <state key="normal" title="SHAPES">
+                                    <color key="titleColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="gameTypeTwoTapped:" destination="z7d-oD-UPK" eventType="touchUpInside" id="x61-9i-8Ad"/>
+                                    <action selector="noPressed:" destination="cTE-0s-Zgl" eventType="touchUpInside" id="zml-Wb-SZw"/>
+                                    <segue destination="cTE-0s-Zgl" kind="show" id="StJ-ck-Qi7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KqR-xP-ccQ" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.15686274509803921" green="0.78401852277369288" blue="0.74901960784313726" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="ADm-mq-avM"/>
+                                    <constraint firstAttribute="width" constant="156" id="fF9-jg-5wx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <state key="normal" title="WORDS">
+                                    <color key="titleColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="gameTypeThreeTapped:" destination="z7d-oD-UPK" eventType="touchUpInside" id="IbP-J2-HFT"/>
+                                    <action selector="noPressed:" destination="cTE-0s-Zgl" eventType="touchUpInside" id="tzo-QX-hsw"/>
+                                    <segue destination="cTE-0s-Zgl" kind="show" id="sTn-bp-0nI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yYH-j0-gQG" firstAttribute="centerX" secondItem="q0M-IC-bc0" secondAttribute="centerX" id="Dx3-7K-avi"/>
+                            <constraint firstItem="q0M-IC-bc0" firstAttribute="top" secondItem="SzY-Oo-TEx" secondAttribute="bottom" constant="30" id="G5w-AV-sFx"/>
+                            <constraint firstItem="SzY-Oo-TEx" firstAttribute="top" secondItem="3LR-gL-w1e" secondAttribute="bottom" constant="70" id="WJV-wf-m9n"/>
+                            <constraint firstItem="KqR-xP-ccQ" firstAttribute="top" secondItem="yYH-j0-gQG" secondAttribute="bottom" constant="30" id="XY1-74-Yvh"/>
+                            <constraint firstItem="q0M-IC-bc0" firstAttribute="centerX" secondItem="e4N-nV-2wx" secondAttribute="centerX" id="dHv-jH-ITQ"/>
+                            <constraint firstItem="yYH-j0-gQG" firstAttribute="top" secondItem="q0M-IC-bc0" secondAttribute="bottom" constant="30" id="oK5-Hc-4s6"/>
+                            <constraint firstItem="SzY-Oo-TEx" firstAttribute="centerX" secondItem="e4N-nV-2wx" secondAttribute="centerX" id="w7X-wJ-kla"/>
+                            <constraint firstItem="KqR-xP-ccQ" firstAttribute="centerX" secondItem="yYH-j0-gQG" secondAttribute="centerX" id="xqW-wC-Ln1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gameTypeOne" destination="dHv-jH-ITQ" id="xSY-to-5B2"/>
+                        <outlet property="gameTypeThree" destination="xqW-wC-Ln1" id="d5H-KP-TwL"/>
+                        <outlet property="gameTypeTwo" destination="Dx3-7K-avi" id="vq4-2S-FRM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zRn-If-1rw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="945" y="38"/>
+        </scene>
+        <!--GameVC-->
+        <scene sceneID="Xbo-zN-aw0">
+            <objects>
+                <viewController id="cTE-0s-Zgl" customClass="GameVC" customModule="BrainTeaser" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qjw-kH-UiF"/>
+                        <viewControllerLayoutGuide type="bottom" id="4hi-KW-Nup"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ozw-zR-GPh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Pz-aU-WgB" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="HGW-fq-r9i"/>
+                                    <constraint firstAttribute="width" constant="147" id="bbT-ff-eDF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="yesPressed:" destination="cTE-0s-Zgl" eventType="touchUpInside" id="YFy-eB-iTD"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xt9-Ky-C3Y" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="5Fb-ay-n5n"/>
+                                    <constraint firstAttribute="height" constant="42" id="tQK-9t-edk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <state key="normal" title="NO">
+                                    <color key="titleColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="noPressed:" destination="cTE-0s-Zgl" eventType="touchUpInside" id="EEA-ap-VuW"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLf-6M-Rnx" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
+                                <color key="backgroundColor" red="1" green="0.241281467" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="Z8f-bp-m7o"/>
+                                    <constraint firstAttribute="height" constant="42" id="ZZx-Gh-WYp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <state key="normal" title="NEW GAME">
+                                    <color key="titleColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="noPressed:" destination="cTE-0s-Zgl" eventType="touchUpInside" id="4kg-Ep-rYY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember This Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAS-XH-OeF">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="K75-aK-u3O"/>
+                                    <constraint firstAttribute="width" constant="339" id="oyi-ON-jO3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.29803921570000003" green="0.29803921570000003" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ClP-Wd-BQX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="Vgj-0d-gWR"/>
+                                    <constraint firstAttribute="height" constant="30" id="x71-9S-Dic"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.241281467" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zD0-j3-zWf" customClass="CustomButton" customModule="BrainTeaser" customModuleProvider="target">
+                                <color key="backgroundColor" red="1" green="0.241281467" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="cVR-Ht-JPH"/>
+                                    <constraint firstAttribute="height" constant="42" id="sBm-IK-UwU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                                <state key="normal" title="RESTART">
+                                    <color key="titleColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="noPressed:" destination="cTE-0s-Zgl" eventType="touchUpInside" id="RnC-oj-KJO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4hi-KW-Nup" firstAttribute="top" secondItem="vLf-6M-Rnx" secondAttribute="bottom" constant="20" id="4iq-DA-S2n"/>
+                            <constraint firstItem="4hi-KW-Nup" firstAttribute="top" secondItem="zD0-j3-zWf" secondAttribute="bottom" constant="20" id="Qc2-ZH-hyo"/>
+                            <constraint firstItem="3Pz-aU-WgB" firstAttribute="trailing" secondItem="ozw-zR-GPh" secondAttribute="trailingMargin" id="RK5-Bm-GbN"/>
+                            <constraint firstItem="ClP-Wd-BQX" firstAttribute="top" secondItem="Qjw-kH-UiF" secondAttribute="bottom" constant="10" id="WOv-3f-3rU"/>
+                            <constraint firstItem="SAS-XH-OeF" firstAttribute="centerX" secondItem="ozw-zR-GPh" secondAttribute="centerX" id="WXb-V7-QQE"/>
+                            <constraint firstItem="4hi-KW-Nup" firstAttribute="top" secondItem="Xt9-Ky-C3Y" secondAttribute="bottom" constant="20" id="Wte-qW-G5l"/>
+                            <constraint firstItem="vLf-6M-Rnx" firstAttribute="leading" secondItem="ozw-zR-GPh" secondAttribute="leadingMargin" id="Xa2-0O-yc7"/>
+                            <constraint firstItem="ClP-Wd-BQX" firstAttribute="centerX" secondItem="ozw-zR-GPh" secondAttribute="centerX" id="ghM-Lw-jlC"/>
+                            <constraint firstItem="4hi-KW-Nup" firstAttribute="top" secondItem="3Pz-aU-WgB" secondAttribute="bottom" constant="20" id="m3h-jl-lA4"/>
+                            <constraint firstItem="zD0-j3-zWf" firstAttribute="trailing" secondItem="ozw-zR-GPh" secondAttribute="trailingMargin" id="pbe-px-pte"/>
+                            <constraint firstItem="SAS-XH-OeF" firstAttribute="top" secondItem="ClP-Wd-BQX" secondAttribute="bottom" constant="30" id="tx9-JB-yti"/>
+                            <constraint firstItem="Xt9-Ky-C3Y" firstAttribute="leading" secondItem="ozw-zR-GPh" secondAttribute="leadingMargin" id="vbS-7m-GpJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newGameButton" destination="vLf-6M-Rnx" id="jn3-yP-b6x"/>
+                        <outlet property="noButton" destination="Xt9-Ky-C3Y" id="jbP-vK-gDg"/>
+                        <outlet property="restartButton" destination="zD0-j3-zWf" id="l3q-b5-lMj"/>
+                        <outlet property="timerLabel" destination="ClP-Wd-BQX" id="hJE-vQ-TxM"/>
+                        <outlet property="titleLabel" destination="SAS-XH-OeF" id="tsd-tS-VC8"/>
+                        <outlet property="yesButton" destination="3Pz-aU-WgB" id="pZX-wM-0CA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HD5-Uo-Z3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1850" y="38"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="brain" width="1667" height="1667"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="StJ-ck-Qi7"/>
+    </inferredMetricsTieBreakers>
 </document>
